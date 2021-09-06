@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/find_your_doctor">
+
+    <fragment
+        android:id="@+id/find_your_doctor"
+        android:name="me.kzaman.xml_design.ui.introduction.FirstIntroductionFragment"
+        android:label="@string/find_your_doctor"
+        tools:layout="@layout/fragment_first_introduction" >
+        <action
+            android:id="@+id/action_find_your_doctor_to_storage_your_medical_records"
+            app:destination="@id/storage_your_medical_records" />
+        <action
+            android:id="@+id/action_find_your_doctor_to_login_welcome"
+            app:destination="@id/login_welcome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storage_your_medical_records"
+        android:name="me.kzaman.xml_design.ui.introduction.SecondIntroductionFragment"
+        android:label="@string/storage_your_medical_records"
+        tools:layout="@layout/fragment_second_introduction" >
+        <action
+            android:id="@+id/action_storage_your_medical_records_to_discuss_in_the_forum"
+            app:destination="@id/discuss_in_the_forum" />
+        <action
+            android:id="@+id/action_find_your_doctor_to_login_welcome"
+            app:destination="@id/login_welcome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/discuss_in_the_forum"
+        android:name="me.kzaman.xml_design.ui.introduction.ThirdIntroductionFragment"
+        android:label="@string/discuss_in_the_forum"
+        tools:layout="@layout/fragment_third_introduction" >
+        <action
+            android:id="@+id/action_discuss_in_the_forum_to_login_welcome"
+            app:destination="@id/login_welcome" />
+        <action
+            android:id="@+id/action_find_your_doctor_to_login_welcome"
+            app:destination="@id/login_welcome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/login_welcome"
+        android:name="me.kzaman.xml_design.ui.login.LoginWelcomeFragment"
+        android:label="LoginWelcome"
+        tools:layout="@layout/fragment_login_welcome" />
+</navigation>

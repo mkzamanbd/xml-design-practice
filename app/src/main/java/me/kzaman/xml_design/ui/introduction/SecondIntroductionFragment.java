@@ -2,15 +2,20 @@ package me.kzaman.xml_design.ui.introduction;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import me.kzaman.xml_design.R;
 
@@ -64,42 +69,54 @@ public class SecondIntroductionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_second_introduction, container, false);
+        return inflater.inflate(R.layout.fragment_second_introduction, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // nav controller
+        NavController navController = Navigation.findNavController(view);
+
+        // click skip button
+        TextView tvSkip = view.findViewById(R.id.tvSkip);
+        tvSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_find_your_doctor_to_login_welcome);
+            }
+        });
 
         // go to second fragment by clicking next button
         TextView tvNext = view.findViewById(R.id.tvNext);
         tvNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ThirdIntroductionFragment thirdIntroductionFragment = new ThirdIntroductionFragment();
-                FragmentManager fragmentManager = getParentFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.flFragment, thirdIntroductionFragment);
-                fragmentTransaction.commit();
+                navController.navigate(R.id.action_storage_your_medical_records_to_discuss_in_the_forum);
+                Toast.makeText(getContext(), "Next Clicked", Toast.LENGTH_LONG).show();
             }
         });
 
-        // go to first intro
+        // go to second fragment by clicking bottom dot button
         ImageButton ibFirstIntro = view.findViewById(R.id.ibFirstIntro);
         ibFirstIntro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirstIntroductionFragment firstIntroductionFragment = new FirstIntroductionFragment();
-                FragmentManager fragmentManager = getParentFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.flFragment, firstIntroductionFragment);
-                fragmentTransaction.commit();
+                navController.navigate(R.id.find_your_doctor);
+                Toast.makeText(getContext(), "Clicked First", Toast.LENGTH_LONG).show();
             }
         });
 
+        // go to second fragment by clicking bottom dot button
+        ImageButton ibThirdIntro = view.findViewById(R.id.ibThirdIntro);
+        ibThirdIntro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.discuss_in_the_forum);
+                Toast.makeText(getContext(), "Clicked Second Third", Toast.LENGTH_LONG).show();
+            }
+        });
 
-        return view;
-    }
-    public void goToSecondIntroFragment(){
-        SecondIntroductionFragment secondIntroductionFragment = new SecondIntroductionFragment();
-        FragmentManager fragmentManager = getParentFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.flFragment, secondIntroductionFragment);
-        fragmentTransaction.commit();
     }
 }
