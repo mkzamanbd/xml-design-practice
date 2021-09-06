@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button">Button</string>
     <string name="medical_app">Medical App</string>
+    <string name="find_your_doctor">Find your Doctor</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
 </resources>
