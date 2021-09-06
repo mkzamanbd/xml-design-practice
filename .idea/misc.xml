@@ -10,12 +10,14 @@
         <entry key="..\:/Android/XMLDesign/app/src/main/res/drawable/ic_heart_splash_screen.xml" value="0.2755208333333333" />
         <entry key="..\:/Android/XMLDesign/app/src/main/res/drawable/ic_noun_heart_splash_screen.xml" value="0.2755208333333333" />
         <entry key="..\:/Android/XMLDesign/app/src/main/res/drawable/ic_second_introduction_icon.xml" value="0.2712820512820513" />
+        <entry key="..\:/Android/XMLDesign/app/src/main/res/drawable/ic_third_introduction_icon.xml" value="0.2712820512820513" />
         <entry key="..\:/Android/XMLDesign/app/src/main/res/drawable/medico_logo_with_name.xml" value="0.439453125" />
         <entry key="..\:/Android/XMLDesign/app/src/main/res/layout/activity_main.xml" value="0.259375" />
         <entry key="..\:/Android/XMLDesign/app/src/main/res/layout/activity_splash_screen.xml" value="0.21920289855072464" />
         <entry key="..\:/Android/XMLDesign/app/src/main/res/layout/fragment_first_introduction.xml" value="0.2" />
         <entry key="..\:/Android/XMLDesign/app/src/main/res/layout/fragment_login_welcome.xml" value="0.259375" />
         <entry key="..\:/Android/XMLDesign/app/src/main/res/layout/fragment_second_introduction.xml" value="0.259375" />
+        <entry key="..\:/Android/XMLDesign/app/src/main/res/layout/fragment_third_introduction.xml" value="0.259375" />
       </map>
     </option>
   </component>

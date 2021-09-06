@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import me.kzaman.xml_design.R;
 
@@ -65,6 +66,19 @@ public class SecondIntroductionFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_second_introduction, container, false);
 
+        // go to second fragment by clicking next button
+        TextView tvNext = view.findViewById(R.id.tvNext);
+        tvNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ThirdIntroductionFragment thirdIntroductionFragment = new ThirdIntroductionFragment();
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.flFragment, thirdIntroductionFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
         // go to first intro
         ImageButton ibFirstIntro = view.findViewById(R.id.ibFirstIntro);
         ibFirstIntro.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +92,14 @@ public class SecondIntroductionFragment extends Fragment {
             }
         });
 
+
         return view;
+    }
+    public void goToSecondIntroFragment(){
+        SecondIntroductionFragment secondIntroductionFragment = new SecondIntroductionFragment();
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.flFragment, secondIntroductionFragment);
+        fragmentTransaction.commit();
     }
 }
