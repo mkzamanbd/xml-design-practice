@@ -3,10 +3,14 @@ package me.kzaman.xml_design.ui.introduction;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import me.kzaman.xml_design.R;
 
@@ -58,9 +62,36 @@ public class FirstIntroductionFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first_introduction, container, false);
+        View view = inflater.inflate(R.layout.fragment_first_introduction, container, false);
+
+        // go to second fragment by clicking next button
+        TextView tvNext = view.findViewById(R.id.tvNext);
+        tvNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSecondIntroFragment();
+            }
+        });
+        // go to second fragment by clicking bottom dot button
+        ImageButton ibSecondIntro = view.findViewById(R.id.ibSecondIntro);
+        ibSecondIntro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSecondIntroFragment();
+            }
+        });
+
+
+        return view;
+    }
+
+    public void goToSecondIntroFragment(){
+        SecondIntroductionFragment secondIntroductionFragment = new SecondIntroductionFragment();
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.flFragment, secondIntroductionFragment);
+        fragmentTransaction.commit();
     }
 }

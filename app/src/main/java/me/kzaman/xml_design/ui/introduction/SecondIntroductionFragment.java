@@ -3,10 +3,13 @@ package me.kzaman.xml_design.ui.introduction;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import me.kzaman.xml_design.R;
 
@@ -58,9 +61,23 @@ public class SecondIntroductionFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second_introduction, container, false);
+        View view = inflater.inflate(R.layout.fragment_second_introduction, container, false);
+
+        // go to first intro
+        ImageButton ibFirstIntro = view.findViewById(R.id.ibFirstIntro);
+        ibFirstIntro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirstIntroductionFragment firstIntroductionFragment = new FirstIntroductionFragment();
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.flFragment, firstIntroductionFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        return view;
     }
 }
