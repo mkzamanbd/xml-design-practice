@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_second_introduction"
+    android:background="@drawable/id_second_introduction_background"
     tools:context=".ui.introduction.SecondIntroductionFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -39,7 +39,7 @@
                 android:text="@string/storage_your_medical_records"/>
 
             <ImageView
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="80dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
