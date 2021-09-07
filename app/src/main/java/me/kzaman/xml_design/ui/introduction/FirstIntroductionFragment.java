@@ -92,7 +92,6 @@ public class FirstIntroductionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_find_your_doctor_to_storage_your_medical_records);
-                Toast.makeText(getContext(), "Next Clicked", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -102,7 +101,6 @@ public class FirstIntroductionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.storage_your_medical_records);
-                Toast.makeText(getContext(), "Clicked Second intro", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -112,7 +110,6 @@ public class FirstIntroductionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.discuss_in_the_forum);
-                Toast.makeText(getContext(), "Clicked Second Third", Toast.LENGTH_LONG).show();
             }
         });
     }

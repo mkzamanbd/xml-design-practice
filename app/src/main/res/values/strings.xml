@@ -11,4 +11,6 @@
     <string name="discuss_in_the_forum">Discuss in the Forum</string>
     <string name="welcome">Welcome</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="sign_in_with_mobile_number">Sign in with mobile number</string>
+    <string name="login_with_facebook">Login with facebook</string>
 </resources>
