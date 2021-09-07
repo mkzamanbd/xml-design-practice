@@ -36,11 +36,11 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="46dp"
                 android:text="@string/find_your_doctor"/>
 
             <ImageView
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="100dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

@@ -34,12 +34,12 @@
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="46dp"
                 android:textAlignment="center"
                 android:text="@string/discuss_in_the_forum"/>
 
             <ImageView
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="100dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
