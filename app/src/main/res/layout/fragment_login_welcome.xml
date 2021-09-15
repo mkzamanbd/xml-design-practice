@@ -56,8 +56,8 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="334dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/primary_button_background"
             android:fontFamily="@font/lato"
             android:text="@string/sign_in_with_mobile_number"
@@ -71,45 +71,54 @@
             app:layout_constraintVertical_bias="0.100000024" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="409dp"
-            android:layout_height="278dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button">
 
             <LinearLayout
-                android:layout_width="334dp"
-                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="130dp"
                 android:background="@drawable/facebook_btn_background"
                 android:fontFamily="@font/lato"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintHorizontal_bias="0.50"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:gravity="center"
-                app:layout_constraintVertical_bias="0.069">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_facebook_icon"/>
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_facebook_icon" />
 
                 <Button
-                    android:background="@android:color/transparent"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato"
+                    android:background="@android:color/transparent"
                     android:text="@string/login_with_facebook"
                     android:textSize="16sp"
-
-                    android:textStyle="normal"
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="normal" />
 
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Or"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
